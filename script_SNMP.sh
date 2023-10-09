@@ -16,7 +16,7 @@ while true; do
          #Ens160
          in_ens=$(snmpget -Oqv -v2c -c community IP_Adress 1.3.6.1.2.1.31.1.1.1.2.2 )
          out_ens=$(snmpget -Oqv -v2c -c community IP_Adress 1.3.6.1.2.1.31.1.1.1.4.2)
-         echo "$(date +"%Y-%m-%d %H:%M:%S");ens160;0:50:56:8b:4f:66;${in_ens};${out_ens}" >> "ens160.csv"
+         echo "$(date +"%Y-%m-%d %H:%M:%S");ens160;${in_ens};${out_ens}" >> "ens160.csv"
 
          #Disk Root
          stockage_r=$(snmpwalk -Oqv -v2c -c community IP_Adress 1.3.6.1.2.1.25.2.3.1.6.31)
